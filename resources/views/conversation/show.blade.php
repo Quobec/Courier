@@ -48,7 +48,8 @@
     // Enable pusher logging - don't include this in production
     //Pusher.logToConsole = true;
 
-    var pusher = new Pusher(env("PUSHER_APP_KEY"), {
+    var key = '{{ env('PUSHER_APP_KEY') }}';
+    var pusher = new Pusher( key , {
         cluster: 'eu'
     });
 

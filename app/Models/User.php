@@ -116,7 +116,7 @@ class User extends Authenticatable implements Auth
         // Id of this user
         array_push($usersNotToDisplay, $this->id);
 
-        return User::whereNotIn("id", $usersNotToDisplay)->limit(5)->get();
+        return User::whereNotIn("id", $usersNotToDisplay)->limit(20)->get();
     }
 
     public function belongsToConversation(Conversation $conversation): bool
