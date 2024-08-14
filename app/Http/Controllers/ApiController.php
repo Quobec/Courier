@@ -42,7 +42,7 @@ class ApiController extends Controller
             ]);
         }
     
-        return $user->createToken($request->device_name)->plainTextToken;
+        return explode('|', $user->createToken($request->device_name)->plainTextToken)[1];
     }
 
     public function logout(Request $request){
