@@ -63,8 +63,7 @@ class AuthController extends Controller
 
             $this->userRepository->changeTfaCode($user, $generatedTfaCode);
 
-            // $this->smsSender->sendSMS($user->phone_number, "Your verification code is ". $generatedTfaCode);
-            // Just check the database, I'm running out of points.
+            $this->smsSender->sendSMS($user->phone_number, "Your verification code is ". $generatedTfaCode);
 
             return view('auth.two_factor_auth');
         }
