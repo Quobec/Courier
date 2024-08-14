@@ -136,7 +136,7 @@ class ApiController extends Controller
     
             return $message;
         } else {
-            return abort(401, 'This user does not have access to this conversation.');
+            return ["status"=> "failed","message"=> 'This user does not have access to this conversation.'];
         }
         
     }
