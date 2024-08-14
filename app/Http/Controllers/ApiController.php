@@ -67,7 +67,7 @@ class ApiController extends Controller
             ) {
                 return [
                     "status"=> "failed",
-                    "message"=> "You already friends or there is already a pending friend request."
+                    "message"=> "You are already friends or there is already a pending friend request."
                 ];
             } else {
                 $invitingUser->friends()->attach($invitedUser->id);
